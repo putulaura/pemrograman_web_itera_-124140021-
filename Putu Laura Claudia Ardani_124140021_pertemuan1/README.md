@@ -43,7 +43,7 @@ Beberapa fitur yang ada di aplikasi:
 - Menghitung total semua barang.
 - Menghapus barang dari keranjang.
 - Diskon 10% jika total belanja mencapai Rp50.000.
-- Menggunakan kode promo `HEMAT10`.
+- Menggunakan kode promo `ITERA123`.
 - Menghitung uang kembalian.
 - Memberikan keterangan jika uang yang dibayar masih kurang.
 - Menyimpan isi keranjang menggunakan `localStorage`.
