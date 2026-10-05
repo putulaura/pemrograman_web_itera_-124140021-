@@ -56,19 +56,19 @@ Beberapa fitur yang ada di aplikasi:
 
 Screenshot ini menunjukkan tampilan awal aplikasi dan form untuk memasukkan barang.
 
-![Form Input](img/input.png)
+![Form Input](screenshoot/input.png)
 
 ### 2. Tampilan Validasi
 
 Screenshot ini menunjukkan ketika input yang dimasukkan tidak sesuai, sehingga muncul pesan error.
 
-![Validasi Error](img/validasi-error.png)
+![Validasi Error](screenshoot/validasi-error.png)
 
 ### 3. Tampilan Transaksi
 
 Screenshot ini menunjukkan barang yang sudah masuk ke keranjang, total belanja, diskon, uang pembayaran, dan kembalian.
 
-![Transaksi](img/transaksi.png)
+![Transaksi](screenshoot/transaksi.png)
 
 ## Penjelasan Program
 
