@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasir Kantin ITERA</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1>Kasir Kantin ITERA</h1>
+          <p>Praktikum PAW</p>
+        </div>
+
+        <div class="tanggal">
+          <span>TANGGAL: <b id="tanggalSekarang"></b></span>
+          <span>NO: <b id="nomorTransaksi">0001</b></span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="bagian-kiri">
+          <div class="card form-card">
+            <h2>+ Tambah Barang</h2>
+
+            <form id="formBarang">
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="namaBarang">NAMA BARANG</label>
+                  <input
+                    type="text"
+                    id="namaBarang"
+                    placeholder="Contoh: BAKSO"
+                  />
+                  <small id="errorNama" class="error"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="hargaBarang">HARGA SATUAN</label>
+                  <input
+                    type="number"
+                    id="hargaBarang"
+                    placeholder="3500"
+                    min="500"
+                  />
+                  <small id="errorHarga" class="error"></small>
+                </div>
+
+                <div class="input-group">
+                  <label for="qtyBarang">jumlah</label>
+                  <input type="number" id="qtyBarang" placeholder="1" min="1" />
+                  <small id="errorQty" class="error"></small>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-tambah">
+                🛒 + Masukkan ke Keranjang
+              </button>
+            </form>
+
+            <div class="pilihan-cepat">
+              <span>PILIHAN HEMAT:</span>
+              <button type="button" onclick="isiCepat('Ayam Geprek', 12000)">
+                Ayam Geprek 12k
+              </button>
+              <button type="button" onclick="isiCepat('Thai Tea', 3000)">
+                Thai Tea 3k
+              </button>
+              <button type="button" onclick="isiCepat('Pangsit', 1500)">
+                Pangsit 1.5k
+              </button>
+              <button type="button" onclick="isiCepat('Es Doger', 4500)">
+                Es Doger 4.5k
+              </button>
+            </div>
+          </div>
+
+          <div class="card daftar-card">
+            <div class="judul-daftar">
+              <h2>▣ Daftar Belanja</h2>
+              <span id="jumlahItem">0 ITEM</span>
+            </div>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>NO</th>
+                    <th>NAMA BARANG</th>
+                    <th>HARGA</th>
+                    <th>jumlah</th>
+                    <th>SUBTOTAL</th>
+                    <th>AKSI</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelBarang"></tbody>
+              </table>
+            </div>
+
+            <p id="keranjangKosong" class="kosong">
+              Belum ada barang di keranjang.
+            </p>
+          </div>
+        </section>
+
+        <section class="bagian-kanan">
+          <div class="struk">
+            <div class="struk-header">
+              <p>*** STRUK PEMBELIAN ***</p>
+              <h2>KANTIN ITERA</h2>
+              <p id="tanggalStruk"></p>
+            </div>
+
+            <div class="garis-putus"></div>
+
+            <div class="ringkasan">
+              <div>
+                <span>Jumlah Barang:</span>
+                <b id="totalQty">0 pcs</b>
+              </div>
+              <div>
+                <span>Subtotal Belanja:</span>
+                <b id="subtotalBelanja">Rp 0</b>
+              </div>
+            </div>
+
+            <div class="promo-box">
+              <label for="kodePromo">KODE PROMO / VOUCHER</label>
+              <div class="promo-input">
+                <input type="text" id="kodePromo" placeholder="ITERA123" />
+                <button type="button" id="btnPromo">Pakai!</button>
+              </div>
+              <small
+                >• Belanja min. Rp 50.000 diskon 10% otomatis<br />
+                • Atau masukkan kode ITERA123 untuk diskon 10%.</small
+              >
+            </div>
+
+            <div class="diskon">
+              <span>Potongan Diskon:</span>
+              <b id="nominalDiskon">- Rp 0</b>
+            </div>
+
+            <div class="total-box">
+              <span>TOTAL BAYAR</span>
+              <strong id="totalBayar">Rp 0</strong>
+            </div>
+
+            <div class="pembayaran">
+              <label for="uangBayar">UANG DITERIMA (RP)</label>
+              <input type="number" id="uangBayar" placeholder="Rp 0" min="0" />
+            </div>
+
+            <div class="kembalian">
+              <span>Kembalian:</span>
+              <b id="hasilKembalian">Rp 0</b>
+            </div>
+
+            <p id="pesanBayar" class="pesan-bayar"></p>
+
+            <button type="button" id="btnReset" class="btn-reset">
+              ↻ TRANSAKSI BARU / KOSONGKAN
+            </button>
+
+            <p class="catatan">"nb: simpan bon / jgn hilang!"</p>
+
+            <div class="kasir">
+              <b>PUTU LAURA</b>
+              <small>(Kasir)</small>
+            </div>
+
+            <div class="terima-kasih">
+              <p>Terima kasih telah berbelanja di Kantin ITERA!</p>
+              <p>Harap simpan struk ini sebagai bukti pembayaran.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
