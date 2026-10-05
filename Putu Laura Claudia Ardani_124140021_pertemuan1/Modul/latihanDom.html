@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan DOM dan API</title>
+
+    <style>
+      .dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Latihan DOM dan API</h1>
+
+    <h2>Form Mahasiswa</h2>
+
+    <form id="form-mahasiswa">
+      <input type="text" id="nama" placeholder="Nama" />
+      <input type="text" id="nim" placeholder="NIM" />
+      <button type="submit">Tambah</button>
+    </form>
+
+    <div id="form-output"></div>
+
+    <hr />
+
+    <h2>Dark Mode</h2>
+    <button id="dark-mode">Dark Mode</button>
+
+    <hr />
+
+    <h2>Data API</h2>
+    <input type="text" id="search" placeholder="Cari judul" />
+
+    <button id="btn-fetch">Ambil Data</button>
+
+    <div id="api-output"></div>
+
+    <hr />
+
+    <h2>Todo List</h2>
+
+    <input type="text" id="todo-input" placeholder="Masukkan tugas" />
+    <button id="todo-button">Tambah</button>
+
+    <ul id="todo-list"></ul>
+
+    <script src="script.js"></script>
+  </body>
+</html>
