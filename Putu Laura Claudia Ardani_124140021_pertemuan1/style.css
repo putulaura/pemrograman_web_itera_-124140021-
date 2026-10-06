@@ -5,9 +5,9 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #eee9dc;
-    color: #292929;
-    background-image: radial-gradient(#aaa 0.8px, transparent 0.8px);
+    background-color: #fdf0f2;
+    color: #2b1b1f;
+    background-image: radial-gradient(#e5aab3 0.8px, transparent 0.8px);
     background-size: 13px 13px;
 }
 
@@ -18,9 +18,9 @@ body {
 }
 
 .header {
-    background-color: #f4f1e8;
-    border: 2px solid #333;
-    box-shadow: 4px 5px 0 #777;
+    background-color: #ffe4e8;
+    border: 2px solid #801d2a;
+    box-shadow: 4px 5px 0 #d97785;
     padding: 18px 25px;
     display: flex;
     justify-content: space-between;
@@ -31,21 +31,23 @@ body {
     margin: 0;
     font-family: Georgia, serif;
     font-size: 28px;
+    color: #901a2e;
 }
 
 .header p {
     margin: 5px 0 0;
     font-size: 12px;
-    color: #555;
+    color: #8c4350;
 }
 
 .tanggal {
-    border: 1px solid #999;
+    border: 1px solid #d97785;
     padding: 8px 12px;
     font-size: 11px;
     display: flex;
     gap: 20px;
-    background-color: #ebe5d6;
+    background-color: #fff0f3;
+    color: #801d2a;
 }
 
 .layout {
@@ -57,9 +59,9 @@ body {
 
 .card,
 .struk {
-    background-color: #f8f5ec;
-    border: 2px solid #333;
-    box-shadow: 4px 5px 0 #777;
+    background-color: #fff8f9;
+    border: 2px solid #801d2a;
+    box-shadow: 4px 5px 0 #d97785;
 }
 
 .form-card {
@@ -69,12 +71,13 @@ body {
 
 h2 {
     font-family: Georgia, serif;
+    color: #801d2a;
 }
 
 .form-card h2 {
     margin-top: 0;
     font-size: 19px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #f1b3bc;
     padding-bottom: 10px;
 }
 
@@ -92,6 +95,7 @@ h2 {
     font-weight: bold;
     margin-bottom: 6px;
     letter-spacing: 0.5px;
+    color: #801d2a;
 }
 
 .input-group input,
@@ -99,29 +103,30 @@ h2 {
 .pembayaran input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #999;
+    border: 1px solid #d97785;
     background: #fff;
     font-size: 14px;
+    color: #2b1b1f;
 }
 
 .input-group input:focus,
 .promo-input input:focus,
 .pembayaran input:focus {
-    outline: 2px solid #777;
+    outline: 2px solid #c0263b;
 }
 
 .error {
     display: block;
     min-height: 17px;
-    color: #d94332;
+    color: #d90429;
     font-size: 11px;
     margin-top: 4px;
 }
 
 .btn-tambah {
     width: 100%;
-    border: 1px solid #8e2418;
-    background: #df472f;
+    border: 1px solid #801d2a;
+    background: #e63946;
     color: white;
     padding: 10px;
     font-weight: bold;
@@ -130,7 +135,7 @@ h2 {
 }
 
 .btn-tambah:hover {
-    background: #c63b27;
+    background: #c0263b;
 }
 
 .pilihan-cepat {
@@ -143,15 +148,20 @@ h2 {
 
 .pilihan-cepat span {
     font-size: 9px;
-    color: #777;
+    color: #8c4350;
 }
 
 .pilihan-cepat button {
-    border: 1px solid #aaa;
-    background: #e6dfd0;
+    border: 1px solid #d97785;
+    background: #ffe4e8;
+    color: #801d2a;
     padding: 5px 9px;
     font-size: 10px;
     cursor: pointer;
+}
+
+.pilihan-cepat button:hover {
+    background: #fbb1bd;
 }
 
 .daftar-card {
@@ -162,7 +172,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #f1b3bc;
 }
 
 .judul-daftar h2 {
@@ -172,7 +182,7 @@ h2 {
 
 .judul-daftar span {
     font-size: 10px;
-    color: #777;
+    color: #8c4350;
 }
 
 .table-wrapper {
@@ -189,31 +199,32 @@ table {
 th {
     text-align: left;
     font-size: 9px;
-    border-bottom: 2px solid #555;
+    border-bottom: 2px solid #801d2a;
     padding: 8px 6px;
+    color: #801d2a;
 }
 
 td {
-    border-bottom: 1px dotted #aaa;
+    border-bottom: 1px dotted #f1b3bc;
     padding: 9px 6px;
 }
 
 .btn-hapus {
-    border: 1px solid #e07160;
-    background: #fff0ed;
-    color: #d34b38;
+    border: 1px solid #e63946;
+    background: #fff0f3;
+    color: #e63946;
     padding: 4px 8px;
     cursor: pointer;
     font-size: 10px;
 }
 
 .btn-hapus:hover {
-    background: #f8d8d2;
+    background: #ffccd5;
 }
 
 .kosong {
     text-align: center;
-    color: #777;
+    color: #8c4350;
     font-size: 12px;
     padding: 15px;
 }
@@ -230,15 +241,17 @@ td {
 .struk-header p {
     margin: 4px;
     font-size: 10px;
+    color: #8c4350;
 }
 
 .struk-header h2 {
     margin: 5px 0;
     font-size: 20px;
+    color: #801d2a;
 }
 
 .garis-putus {
-    border-top: 2px dashed #555;
+    border-top: 2px dashed #801d2a;
     margin: 12px 0 18px;
 }
 
@@ -252,7 +265,8 @@ td {
 }
 
 .promo-box {
-    border: 1px solid #aaa;
+    border: 1px solid #d97785;
+    background: #fff0f3;
     padding: 10px;
     margin-top: 18px;
 }
@@ -263,18 +277,22 @@ td {
 }
 
 .promo-input button {
-    background: #333;
+    background: #801d2a;
     color: white;
     border: 0;
     padding: 0 12px;
     cursor: pointer;
 }
 
+.promo-input button:hover {
+    background: #c0263b;
+}
+
 .promo-box small {
     display: block;
     margin-top: 7px;
     font-size: 9px;
-    color: #666;
+    color: #8c4350;
     line-height: 1.5;
 }
 
@@ -283,12 +301,12 @@ td {
 }
 
 .diskon b {
-    color: #49764c;
+    color: #2a9d8f;
 }
 
 .total-box {
-    border: 2px solid #777;
-    background: #e9e1d1;
+    border: 2px solid #801d2a;
+    background: #ffe4e8;
     padding: 13px;
     margin-top: 12px;
     display: flex;
@@ -299,11 +317,13 @@ td {
 .total-box span {
     font-size: 10px;
     font-weight: bold;
+    color: #801d2a;
 }
 
 .total-box strong {
     font-size: 23px;
     text-align: right;
+    color: #801d2a;
 }
 
 .pembayaran {
@@ -320,20 +340,21 @@ td {
 }
 
 .kembalian b {
-    color: #3f7044;
+    color: #2a9d8f;
 }
 
 .pesan-bayar {
     min-height: 18px;
     font-size: 11px;
-    color: #d94332;
+    color: #d90429;
     margin: 4px 0;
 }
 
 .btn-reset {
     width: 100%;
     background: #fff;
-    border: 2px solid #444;
+    border: 2px solid #801d2a;
+    color: #801d2a;
     padding: 9px;
     font-weight: bold;
     cursor: pointer;
@@ -341,19 +362,19 @@ td {
 }
 
 .btn-reset:hover {
-    background: #eee;
+    background: #ffe4e8;
 }
 
 .catatan {
     font-size: 10px;
     margin-top: 20px;
-    color: #555;
+    color: #8c4350;
 }
 
 .kasir {
     text-align: right;
     margin-top: 12px;
-    color: #55789a;
+    color: #a4133c;
 }
 
 .kasir b {
@@ -368,7 +389,7 @@ td {
 .terima-kasih {
     text-align: center;
     font-size: 9px;
-    color: #777;
+    color: #8c4350;
     margin-top: 18px;
 }
 
