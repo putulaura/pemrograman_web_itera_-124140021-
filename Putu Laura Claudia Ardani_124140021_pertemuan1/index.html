@@ -1,427 +1,146 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: #faf7f8;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    max-width: 1250px;
-    margin: 30px auto;
-}
-
-.header {
-    background-color: #ffffff;
-    border: 1px solid #f0d5da;
-    border-radius: 12px;
-    padding: 20px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 700;
-    color: #c0263b;
-}
-
-.header p {
-    margin: 4px 0 0;
-    font-size: 13px;
-    color: #666;
-}
-
-.tanggal {
-    border: 1px solid #f0d5da;
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 12px;
-    display: flex;
-    gap: 15px;
-    background-color: #fff0f3;
-    color: #901a2e;
-}
-
-.layout {
-    display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    gap: 25px;
-    margin-top: 25px;
-}
-
-.card,
-.struk {
-    background-color: #ffffff;
-    border: 1px solid #f0d5da;
-    border-radius: 12px;
-}
-
-.form-card {
-    padding: 22px;
-    margin-bottom: 25px;
-}
-
-h2 {
-    color: #901a2e;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.form-card h2 {
-    margin-top: 0;
-    border-bottom: 1px solid #f8e1e5;
-    padding-bottom: 12px;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 0.6fr;
-    gap: 12px;
-}
-
-.input-group label,
-.pembayaran label,
-.promo-box label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #555;
-    text-transform: uppercase;
-}
-
-.input-group input,
-.promo-input input,
-.pembayaran input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #e2c2c7;
-    border-radius: 8px;
-    background: #fff;
-    font-size: 14px;
-}
-
-.input-group input:focus,
-.promo-input input:focus,
-.pembayaran input:focus {
-    outline: none;
-    border-color: #e63946;
-}
-
-.error {
-    display: block;
-    min-height: 17px;
-    color: #e63946;
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-.btn-tambah {
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    background: #e63946;
-    color: white;
-    padding: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
-}
-
-.btn-tambah:hover {
-    background: #c0263b;
-}
-
-.pilihan-cepat {
-    margin-top: 15px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.pilihan-cepat span {
-    font-size: 11px;
-    color: #777;
-}
-
-.pilihan-cepat button {
-    border: 1px solid #f0d5da;
-    border-radius: 20px;
-    background: #fff0f3;
-    color: #901a2e;
-    padding: 5px 12px;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-.pilihan-cepat button:hover {
-    background: #ffccd5;
-}
-
-.daftar-card {
-    padding: 22px;
-}
-
-.judul-daftar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #f8e1e5;
-}
-
-.judul-daftar h2 {
-    margin: 0 0 12px;
-}
-
-.judul-daftar span {
-    font-size: 12px;
-    color: #777;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 13px;
-}
-
-th {
-    text-align: left;
-    font-size: 11px;
-    border-bottom: 2px solid #f0d5da;
-    padding: 10px 8px;
-    color: #888;
-    text-transform: uppercase;
-}
-
-td {
-    border-bottom: 1px solid #f8e1e5;
-    padding: 12px 8px;
-}
-
-.btn-hapus {
-    border: none;
-    border-radius: 6px;
-    background: #fff0f3;
-    color: #e63946;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.btn-hapus:hover {
-    background: #ffccd5;
-}
-
-.kosong {
-    text-align: center;
-    color: #888;
-    font-size: 13px;
-    padding: 20px;
-}
-
-.struk {
-    padding: 25px;
-    min-height: 600px;
-}
-
-.struk-header {
-    text-align: center;
-}
-
-.struk-header p {
-    margin: 4px;
-    font-size: 11px;
-    color: #777;
-}
-
-.struk-header h2 {
-    margin: 6px 0;
-    font-size: 20px;
-    color: #901a2e;
-}
-
-.garis-putus {
-    border-top: 1px dashed #e2c2c7;
-    margin: 15px 0 20px;
-}
-
-.ringkasan div,
-.diskon,
-.kembalian {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 10px;
-}
-
-.promo-box {
-    border: 1px solid #f0d5da;
-    border-radius: 8px;
-    background: #fff8f9;
-    padding: 12px;
-    margin-top: 20px;
-}
-
-.promo-input {
-    display: flex;
-    gap: 8px;
-}
-
-.promo-input button {
-    background: #901a2e;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 0 15px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.promo-box small {
-    display: block;
-    margin-top: 8px;
-    font-size: 10px;
-    color: #777;
-    line-height: 1.4;
-}
-
-.diskon b {
-    color: #2a9d8f;
-}
-
-.total-box {
-    border-radius: 8px;
-    background: #fff0f3;
-    padding: 15px;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.total-box span {
-    font-size: 11px;
-    font-weight: 600;
-    color: #901a2e;
-}
-
-.total-box strong {
-    font-size: 24px;
-    text-align: right;
-    color: #901a2e;
-}
-
-.pembayaran {
-    margin-top: 18px;
-}
-
-.pembayaran input {
-    margin-top: 4px;
-}
-
-.kembalian {
-    margin-top: 12px;
-    font-size: 15px;
-}
-
-.kembalian b {
-    color: #2a9d8f;
-}
-
-.pesan-bayar {
-    min-height: 18px;
-    font-size: 12px;
-    color: #e63946;
-    margin: 4px 0;
-}
-
-.btn-reset {
-    width: 100%;
-    background: #fff;
-    border: 1px solid #e2c2c7;
-    border-radius: 8px;
-    color: #555;
-    padding: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.btn-reset:hover {
-    background: #fff0f3;
-    color: #901a2e;
-}
-
-.catatan {
-    font-size: 11px;
-    margin-top: 20px;
-    color: #777;
-}
-
-.kasir {
-    text-align: right;
-    margin-top: 15px;
-    color: #901a2e;
-}
-
-.kasir b {
-    display: block;
-    font-size: 14px;
-}
-
-.kasir small {
-    font-size: 9px;
-}
-
-.terima-kasih {
-    text-align: center;
-    font-size: 10px;
-    color: #888;
-    margin-top: 20px;
-}
-
-@media (max-width: 850px) {
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .tanggal {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
-@media (max-width: 550px) {
-    .container {
-        width: 95%;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .header h1 {
-        font-size: 20px;
-    }
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kasir Kantin ITERA</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div>
+                <h1>Kasir Kantin ITERA</h1>
+                <p>Praktikum PAW</p>
+            </div>
+            <div class="tanggal">
+                <span>TANGGAL: <b id="tanggalSekarang"></b></span>
+                <span>NO: <b id="nomorTransaksi">0001</b></span>
+            </div>
+        </header>
+
+        <div class="layout">
+            <main>
+                <section class="card form-card">
+                    <h2>+ Tambah Barang</h2>
+                    <form id="formBarang">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="namaBarang">NAMA BARANG</label>
+                                <input type="text" id="namaBarang" placeholder="Contoh: BAKSO" required />
+                                <span class="error" id="errNama"></span>
+                            </div>
+                            <div class="input-group">
+                                <label for="hargaBarang">HARGA SATUAN</label>
+                                <input type="number" id="hargaBarang" placeholder="3500" min="1" required />
+                                <span class="error" id="errHarga"></span>
+                            </div>
+                            <div class="input-group">
+                                <label for="jumlahBarang">JUMLAH</label>
+                                <input type="number" id="jumlahBarang" value="1" min="1" required />
+                                <span class="error" id="errJumlah"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-tambah">🛒 + Masukkan ke Keranjang</button>
+                    </form>
+                    <div class="pilihan-cepat">
+                        <span>PILIHAN HEMAT:</span>
+                        <button type="button" onclick="pilihCepat('Ayam Geprek', 12000)">Ayam Geprek 12k</button>
+                        <button type="button" onclick="pilihCepat('Thai Tea', 3000)">Thai Tea 3k</button>
+                        <button type="button" onclick="pilihCepat('Pangsit', 1500)">Pangsit 1.5k</button>
+                        <button type="button" onclick="pilihCepat('Es Doger', 4500)">Es Doger 4.5k</button>
+                    </div>
+                </section>
+
+                <section class="card daftar-card">
+                    <div class="judul-daftar">
+                        <h2>▣ Daftar Belanja</h2>
+                        <span id="totalItemText">0 ITEM</span>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>NAMA BARANG</th>
+                                    <th>HARGA</th>
+                                    <th>JUMLAH</th>
+                                    <th>SUBTOTAL</th>
+                                    <th>AKSI</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelKeranjang">
+                                <tr>
+                                    <td colspan="6" class="kosong">Belum ada barang di keranjang.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+
+            <section class="bagian-kanan">
+                <aside class="struk">
+                    <div class="struk-header">
+                        <p>STRUK PEMBELIAN</p>
+                        <h2>KANTIN ITERA</h2>
+                        <p id="tanggalStruk"></p>
+                    </div>
+
+                    <div class="garis-putus"></div>
+
+                    <div class="ringkasan">
+                        <div><span>Jumlah Barang:</span> <b id="strukJumlahItem">0 pcs</b></div>
+                        <div><span>Subtotal Belanja:</span> <b id="strukSubtotal">Rp 0</b></div>
+                    </div>
+
+                    <div class="promo-box">
+                        <label for="kodeVoucher">KODE PROMO / VOUCHER</label>
+                        <div class="promo-input">
+                            <input type="text" id="kodeVoucher" placeholder="ITERA123" />
+                            <button type="button" id="btnVoucher">Pakai!</button>
+                        </div>
+                        <small>• Belanja min. Rp 50.000 diskon 10% otomatis<br>• Atau masukkan kode ITERA123 untuk diskon 10%.</small>
+                    </div>
+
+                    <div class="diskon">
+                        <span>Potongan Diskon:</span>
+                        <b id="strukDiskon">- Rp 0</b>
+                    </div>
+
+                    <div class="total-box">
+                        <span>TOTAL BAYAR</span>
+                        <strong id="strukTotal">Rp 0</strong>
+                    </div>
+
+                    <div class="pembayaran">
+                        <label for="uangBayar">UANG DITERIMA (RP)</label>
+                        <input type="number" id="uangBayar" placeholder="Rp 0" />
+                        <span class="pesan-bayar" id="pesanBayar"></span>
+                    </div>
+
+                    <div class="kembalian">
+                        <span>KEMBALIAN:</span>
+                        <b id="strukKembalian">Rp 0</b>
+                    </div>
+
+                    <button type="button" class="btn-reset" id="btnReset">🔄 Transaksi Baru</button>
+
+                    <div class="catatan">
+                        <p>Catatan: Barang yang sudah dibeli tidak dapat ditukar/dikembalikan.</p>
+                    </div>
+                    <div class="kasir">
+                        <small>Kasir:</small>
+                        <b>Putu Laura</b>
+                    </div>
+                    <div class="terima-kasih">
+                        <p>Terima kasih telah berbelanja di Kantin ITERA!</p>
+                        <p>Harap simpan struk ini sebagai bukti pembayaran.</p>
+                    </div>
+                </aside>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
