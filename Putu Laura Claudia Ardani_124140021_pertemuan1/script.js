@@ -1,8 +1,8 @@
-// Data keranjang
+// keranjang
 let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 let diskon = 0;
 
-// Menampilkan tanggal hari ini
+//  tanggal hari ini
 function tampilkanTanggal() {
   let sekarang = new Date();
 
@@ -17,17 +17,16 @@ function tampilkanTanggal() {
     hasilTanggal + " • No. 0001";
 }
 
-// Mengubah angka menjadi Rupiah
+// mengubah angka menjadi Rupiah
 function formatRupiah(angka) {
   return "Rp " + angka.toLocaleString("id-ID");
 }
 
-// Menyimpan keranjang ke localStorage
 function simpanKeranjang() {
   localStorage.setItem("keranjang", JSON.stringify(keranjang));
 }
 
-// Menampilkan semua barang ke tabel
+//  barang ke tabel
 function tampilkanKeranjang() {
   let tabel = document.getElementById("tabelBarang");
   let kosong = document.getElementById("keranjangKosong");
@@ -67,7 +66,6 @@ function tampilkanKeranjang() {
   hitungTotal();
 }
 
-// Menambahkan barang ke keranjang
 function tambahBarang() {
   let nama = document.getElementById("namaBarang").value.trim();
   let harga = Number(document.getElementById("hargaBarang").value);
@@ -113,23 +111,21 @@ function tambahBarang() {
   simpanKeranjang();
   tampilkanKeranjang();
 
-  // Form dikosongkan setelah berhasil
   document.getElementById("formBarang").reset();
 }
 
-// Menghapus satu barang
+// menghapus satu barang
 function hapusBarang(index) {
   keranjang.splice(index, 1);
 
   simpanKeranjang();
   tampilkanKeranjang();
 
-  // Uang bayar dikosongkan karena total berubah
   document.getElementById("uangBayar").value = "";
   hitungKembalian();
 }
 
-// Menghitung subtotal, total dan diskon
+// subtotal, total dan diskon
 function hitungTotal() {
   let subtotal = 0;
   let totalQty = 0;
