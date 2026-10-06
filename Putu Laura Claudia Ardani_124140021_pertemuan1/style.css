@@ -4,24 +4,22 @@
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fdf0f2;
-    color: #2b1b1f;
-    background-image: radial-gradient(#e5aab3 0.8px, transparent 0.8px);
-    background-size: 13px 13px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #faf7f8;
+    color: #333;
 }
 
 .container {
     width: 90%;
     max-width: 1250px;
-    margin: 25px auto;
+    margin: 30px auto;
 }
 
 .header {
-    background-color: #ffe4e8;
-    border: 2px solid #801d2a;
-    box-shadow: 4px 5px 0 #d97785;
-    padding: 18px 25px;
+    background-color: #ffffff;
+    border: 1px solid #f0d5da;
+    border-radius: 12px;
+    padding: 20px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,109 +27,113 @@ body {
 
 .header h1 {
     margin: 0;
-    font-family: Georgia, serif;
-    font-size: 28px;
-    color: #901a2e;
+    font-size: 24px;
+    font-weight: 700;
+    color: #c0263b;
 }
 
 .header p {
-    margin: 5px 0 0;
-    font-size: 12px;
-    color: #8c4350;
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #666;
 }
 
 .tanggal {
-    border: 1px solid #d97785;
-    padding: 8px 12px;
-    font-size: 11px;
+    border: 1px solid #f0d5da;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 12px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
     background-color: #fff0f3;
-    color: #801d2a;
+    color: #901a2e;
 }
 
 .layout {
     display: grid;
     grid-template-columns: 1.35fr 1fr;
     gap: 25px;
-    margin-top: 22px;
+    margin-top: 25px;
 }
 
 .card,
 .struk {
-    background-color: #fff8f9;
-    border: 2px solid #801d2a;
-    box-shadow: 4px 5px 0 #d97785;
+    background-color: #ffffff;
+    border: 1px solid #f0d5da;
+    border-radius: 12px;
 }
 
 .form-card {
-    padding: 20px;
+    padding: 22px;
     margin-bottom: 25px;
 }
 
 h2 {
-    font-family: Georgia, serif;
-    color: #801d2a;
+    color: #901a2e;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .form-card h2 {
     margin-top: 0;
-    font-size: 19px;
-    border-bottom: 1px solid #f1b3bc;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #f8e1e5;
+    padding-bottom: 12px;
 }
 
 .form-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 0.6fr;
-    gap: 10px;
+    gap: 12px;
 }
 
 .input-group label,
 .pembayaran label,
 .promo-box label {
     display: block;
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 600;
     margin-bottom: 6px;
-    letter-spacing: 0.5px;
-    color: #801d2a;
+    color: #555;
+    text-transform: uppercase;
 }
 
 .input-group input,
 .promo-input input,
 .pembayaran input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #d97785;
+    padding: 10px 12px;
+    border: 1px solid #e2c2c7;
+    border-radius: 8px;
     background: #fff;
     font-size: 14px;
-    color: #2b1b1f;
 }
 
 .input-group input:focus,
 .promo-input input:focus,
 .pembayaran input:focus {
-    outline: 2px solid #c0263b;
+    outline: none;
+    border-color: #e63946;
 }
 
 .error {
     display: block;
     min-height: 17px;
-    color: #d90429;
-    font-size: 11px;
+    color: #e63946;
+    font-size: 12px;
     margin-top: 4px;
 }
 
 .btn-tambah {
     width: 100%;
-    border: 1px solid #801d2a;
+    border: none;
+    border-radius: 8px;
     background: #e63946;
     color: white;
-    padding: 10px;
-    font-weight: bold;
+    padding: 11px;
+    font-weight: 600;
     cursor: pointer;
     font-size: 14px;
+    transition: background 0.2s;
 }
 
 .btn-tambah:hover {
@@ -139,50 +141,50 @@ h2 {
 }
 
 .pilihan-cepat {
-    margin-top: 13px;
+    margin-top: 15px;
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .pilihan-cepat span {
-    font-size: 9px;
-    color: #8c4350;
+    font-size: 11px;
+    color: #777;
 }
 
 .pilihan-cepat button {
-    border: 1px solid #d97785;
-    background: #ffe4e8;
-    color: #801d2a;
-    padding: 5px 9px;
-    font-size: 10px;
+    border: 1px solid #f0d5da;
+    border-radius: 20px;
+    background: #fff0f3;
+    color: #901a2e;
+    padding: 5px 12px;
+    font-size: 11px;
     cursor: pointer;
 }
 
 .pilihan-cepat button:hover {
-    background: #fbb1bd;
+    background: #ffccd5;
 }
 
 .daftar-card {
-    padding: 18px;
+    padding: 22px;
 }
 
 .judul-daftar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #f1b3bc;
+    border-bottom: 1px solid #f8e1e5;
 }
 
 .judul-daftar h2 {
-    margin: 0 0 10px;
-    font-size: 19px;
+    margin: 0 0 12px;
 }
 
 .judul-daftar span {
-    font-size: 10px;
-    color: #8c4350;
+    font-size: 12px;
+    color: #777;
 }
 
 .table-wrapper {
@@ -192,30 +194,33 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 8px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 13px;
 }
 
 th {
     text-align: left;
-    font-size: 9px;
-    border-bottom: 2px solid #801d2a;
-    padding: 8px 6px;
-    color: #801d2a;
+    font-size: 11px;
+    border-bottom: 2px solid #f0d5da;
+    padding: 10px 8px;
+    color: #888;
+    text-transform: uppercase;
 }
 
 td {
-    border-bottom: 1px dotted #f1b3bc;
-    padding: 9px 6px;
+    border-bottom: 1px solid #f8e1e5;
+    padding: 12px 8px;
 }
 
 .btn-hapus {
-    border: 1px solid #e63946;
+    border: none;
+    border-radius: 6px;
     background: #fff0f3;
     color: #e63946;
-    padding: 4px 8px;
+    padding: 5px 10px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: 600;
 }
 
 .btn-hapus:hover {
@@ -224,14 +229,14 @@ td {
 
 .kosong {
     text-align: center;
-    color: #8c4350;
-    font-size: 12px;
-    padding: 15px;
+    color: #888;
+    font-size: 13px;
+    padding: 20px;
 }
 
 .struk {
-    padding: 20px;
-    min-height: 650px;
+    padding: 25px;
+    min-height: 600px;
 }
 
 .struk-header {
@@ -240,19 +245,19 @@ td {
 
 .struk-header p {
     margin: 4px;
-    font-size: 10px;
-    color: #8c4350;
+    font-size: 11px;
+    color: #777;
 }
 
 .struk-header h2 {
-    margin: 5px 0;
+    margin: 6px 0;
     font-size: 20px;
-    color: #801d2a;
+    color: #901a2e;
 }
 
 .garis-putus {
-    border-top: 2px dashed #801d2a;
-    margin: 12px 0 18px;
+    border-top: 1px dashed #e2c2c7;
+    margin: 15px 0 20px;
 }
 
 .ringkasan div,
@@ -260,44 +265,39 @@ td {
 .kembalian {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
-    margin-bottom: 8px;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .promo-box {
-    border: 1px solid #d97785;
-    background: #fff0f3;
-    padding: 10px;
-    margin-top: 18px;
+    border: 1px solid #f0d5da;
+    border-radius: 8px;
+    background: #fff8f9;
+    padding: 12px;
+    margin-top: 20px;
 }
 
 .promo-input {
     display: flex;
-    gap: 5px;
+    gap: 8px;
 }
 
 .promo-input button {
-    background: #801d2a;
+    background: #901a2e;
     color: white;
-    border: 0;
-    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    padding: 0 15px;
     cursor: pointer;
-}
-
-.promo-input button:hover {
-    background: #c0263b;
+    font-weight: 600;
 }
 
 .promo-box small {
     display: block;
-    margin-top: 7px;
-    font-size: 9px;
-    color: #8c4350;
-    line-height: 1.5;
-}
-
-.diskon {
-    margin-top: 15px;
+    margin-top: 8px;
+    font-size: 10px;
+    color: #777;
+    line-height: 1.4;
 }
 
 .diskon b {
@@ -305,38 +305,38 @@ td {
 }
 
 .total-box {
-    border: 2px solid #801d2a;
-    background: #ffe4e8;
-    padding: 13px;
-    margin-top: 12px;
+    border-radius: 8px;
+    background: #fff0f3;
+    padding: 15px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 6px;
 }
 
 .total-box span {
-    font-size: 10px;
-    font-weight: bold;
-    color: #801d2a;
+    font-size: 11px;
+    font-weight: 600;
+    color: #901a2e;
 }
 
 .total-box strong {
-    font-size: 23px;
+    font-size: 24px;
     text-align: right;
-    color: #801d2a;
+    color: #901a2e;
 }
 
 .pembayaran {
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .pembayaran input {
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 .kembalian {
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 12px;
+    font-size: 15px;
 }
 
 .kembalian b {
@@ -345,36 +345,38 @@ td {
 
 .pesan-bayar {
     min-height: 18px;
-    font-size: 11px;
-    color: #d90429;
+    font-size: 12px;
+    color: #e63946;
     margin: 4px 0;
 }
 
 .btn-reset {
     width: 100%;
     background: #fff;
-    border: 2px solid #801d2a;
-    color: #801d2a;
-    padding: 9px;
-    font-weight: bold;
+    border: 1px solid #e2c2c7;
+    border-radius: 8px;
+    color: #555;
+    padding: 10px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .btn-reset:hover {
-    background: #ffe4e8;
+    background: #fff0f3;
+    color: #901a2e;
 }
 
 .catatan {
-    font-size: 10px;
+    font-size: 11px;
     margin-top: 20px;
-    color: #8c4350;
+    color: #777;
 }
 
 .kasir {
     text-align: right;
-    margin-top: 12px;
-    color: #a4133c;
+    margin-top: 15px;
+    color: #901a2e;
 }
 
 .kasir b {
@@ -383,14 +385,14 @@ td {
 }
 
 .kasir small {
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .terima-kasih {
     text-align: center;
-    font-size: 9px;
-    color: #8c4350;
-    margin-top: 18px;
+    font-size: 10px;
+    color: #888;
+    margin-top: 20px;
 }
 
 @media (max-width: 850px) {
@@ -420,10 +422,6 @@ td {
     }
 
     .header h1 {
-        font-size: 22px;
-    }
-
-    .struk {
-        min-height: auto;
+        font-size: 20px;
     }
 }
