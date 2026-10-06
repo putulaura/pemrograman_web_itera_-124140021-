@@ -1,23 +1,21 @@
-// keranjang
 let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
 let diskon = 0;
 
-//  tanggal hari ini
 function tampilkanTanggal() {
   let sekarang = new Date();
-
   let tanggal = String(sekarang.getDate()).padStart(2, "0");
   let bulan = String(sekarang.getMonth() + 1).padStart(2, "0");
   let tahun = sekarang.getFullYear();
 
   let hasilTanggal = tanggal + "/" + bulan + "/" + tahun;
 
-  document.getElementById("tanggalSekarang").textContent = hasilTanggal;
-  document.getElementById("tanggalStruk").textContent =
-    hasilTanggal + " • No. 0001";
+  let elTanggal = document.getElementById("tanggalSekarang");
+  let elStruk = document.getElementById("tanggalStruk");
+
+  if (elTanggal) elTanggal.textContent = hasilTanggal;
+  if (elStruk) elStruk.textContent = hasilTanggal + " • No. 0001";
 }
 
-// mengubah angka menjadi Rupiah
 function formatRupiah(angka) {
   return "Rp " + angka.toLocaleString("id-ID");
 }
@@ -26,106 +24,96 @@ function simpanKeranjang() {
   localStorage.setItem("keranjang", JSON.stringify(keranjang));
 }
 
-//  barang ke tabel
 function tampilkanKeranjang() {
-  let tabel = document.getElementById("tabelBarang");
-  let kosong = document.getElementById("keranjangKosong");
+  let tabel = document.getElementById("tabelKeranjang");
+  if (!tabel) return;
 
   tabel.innerHTML = "";
 
   if (keranjang.length === 0) {
-    kosong.style.display = "block";
+    tabel.innerHTML = `<tr><td colspan="6" class="kosong">Belum ada barang di keranjang.</td></tr>`;
   } else {
-    kosong.style.display = "none";
+    for (let i = 0; i < keranjang.length; i++) {
+      let barang = keranjang[i];
+      let subtotal = barang.harga * barang.qty;
+
+      let baris = document.createElement("tr");
+      baris.innerHTML = `
+        <td>${i + 1}</td>
+        <td>${barang.nama}</td>
+        <td>${formatRupiah(barang.harga)}</td>
+        <td>${barang.qty}</td>
+        <td>${formatRupiah(subtotal)}</td>
+        <td>
+            <button type="button" class="btn-hapus" onclick="hapusBarang(${i})">Hapus</button>
+        </td>
+      `;
+      tabel.appendChild(baris);
+    }
   }
 
-  for (let i = 0; i < keranjang.length; i++) {
-    let barang = keranjang[i];
-
-    let subtotal = barang.harga * barang.qty;
-
-    let baris = document.createElement("tr");
-
-    baris.innerHTML = `
-            <td>${i + 1}</td>
-            <td>${barang.nama}</td>
-            <td>${formatRupiah(barang.harga)}</td>
-            <td>${barang.qty}</td>
-            <td>${formatRupiah(subtotal)}</td>
-            <td>
-                <button class="btn-hapus" onclick="hapusBarang(${i})">Hapus</button>
-            </td>
-        `;
-
-    tabel.appendChild(baris);
-  }
-
-  document.getElementById("jumlahItem").textContent =
-    keranjang.length + " ITEM";
+  let totalItemText = document.getElementById("totalItemText");
+  if (totalItemText) totalItemText.textContent = keranjang.length + " ITEM";
 
   hitungTotal();
 }
 
 function tambahBarang() {
-  let nama = document.getElementById("namaBarang").value.trim();
-  let harga = Number(document.getElementById("hargaBarang").value);
-  let qty = Number(document.getElementById("qtyBarang").value);
+  let namaInput = document.getElementById("namaBarang");
+  let hargaInput = document.getElementById("hargaBarang");
+  let qtyInput = document.getElementById("jumlahBarang");
 
-  let errorNama = document.getElementById("errorNama");
-  let errorHarga = document.getElementById("errorHarga");
-  let errorQty = document.getElementById("errorQty");
+  let nama = namaInput ? namaInput.value.trim() : "";
+  let harga = hargaInput ? Number(hargaInput.value) : 0;
+  let qty = qtyInput ? Number(qtyInput.value) : 1;
 
-  errorNama.textContent = "";
-  errorHarga.textContent = "";
-  errorQty.textContent = "";
+  let errorNama = document.getElementById("errNama");
+  let errorHarga = document.getElementById("errHarga");
+  let errorQty = document.getElementById("errJumlah");
+
+  if (errorNama) errorNama.textContent = "";
+  if (errorHarga) errorHarga.textContent = "";
+  if (errorQty) errorQty.textContent = "";
 
   let dataValid = true;
 
   if (nama.length < 3) {
-    errorNama.textContent = "Nama barang minimal 3 karakter.";
+    if (errorNama) errorNama.textContent = "Nama barang minimal 3 karakter.";
     dataValid = false;
   }
 
   if (harga < 500 || isNaN(harga)) {
-    errorHarga.textContent = "Harga minimal Rp 500.";
+    if (errorHarga) errorHarga.textContent = "Harga minimal Rp 500.";
     dataValid = false;
   }
 
   if (qty < 1 || !Number.isInteger(qty)) {
-    errorQty.textContent = "Qty harus angka bulat minimal 1.";
+    if (errorQty) errorQty.textContent = "Jumlah harus angka bulat minimal 1.";
     dataValid = false;
   }
 
-  if (dataValid === false) {
-    return;
-  }
+  if (!dataValid) return;
 
-  let barangBaru = {
-    nama: nama,
-    harga: harga,
-    qty: qty,
-  };
-
-  keranjang.push(barangBaru);
+  keranjang.push({ nama, harga, qty });
 
   simpanKeranjang();
   tampilkanKeranjang();
 
-  document.getElementById("formBarang").reset();
+  let form = document.getElementById("formBarang");
+  if (form) form.reset();
+  if (qtyInput) qtyInput.value = 1;
 }
 
-// menghapus satu barang
 function hapusBarang(index) {
   keranjang.splice(index, 1);
-
   simpanKeranjang();
   tampilkanKeranjang();
 
-  document.getElementById("uangBayar").value = "";
+  let uangBayar = document.getElementById("uangBayar");
+  if (uangBayar) uangBayar.value = "";
   hitungKembalian();
 }
 
-// subtotal, total dan diskon
 function hitungTotal() {
   let subtotal = 0;
   let totalQty = 0;
@@ -135,17 +123,12 @@ function hitungTotal() {
     totalQty += keranjang[i].qty;
   }
 
-  let kodePromo = document
-    .getElementById("kodePromo")
-    .value.trim()
-    .toUpperCase();
+  let kodeVoucherEl = document.getElementById("kodeVoucher");
+  let kodePromo = kodeVoucherEl ? kodeVoucherEl.value.trim().toUpperCase() : "";
 
-  // Diskon otomatis jika belanja minimal 50 ribu
   if (subtotal >= 50000) {
     diskon = subtotal * 0.1;
-  }
-  // Atau bisa menggunakan kode promo HEMAT10
-  else if (kodePromo === "ITERA123" && subtotal > 0) {
+  } else if (kodePromo === "ITERA123" && subtotal > 0) {
     diskon = subtotal * 0.1;
   } else {
     diskon = 0;
@@ -153,119 +136,120 @@ function hitungTotal() {
 
   let totalAkhir = subtotal - diskon;
 
-  document.getElementById("totalQty").textContent = totalQty + " pcs";
-  document.getElementById("subtotalBelanja").textContent =
-    formatRupiah(subtotal);
-  document.getElementById("nominalDiskon").textContent =
-    "- " + formatRupiah(diskon);
-  document.getElementById("totalBayar").textContent = formatRupiah(totalAkhir);
+  let elJumlahItem = document.getElementById("strukJumlahItem");
+  let elSubtotal = document.getElementById("strukSubtotal");
+  let elDiskon = document.getElementById("strukDiskon");
+  let elTotal = document.getElementById("strukTotal");
+
+  if (elJumlahItem) elJumlahItem.textContent = totalQty + " pcs";
+  if (elSubtotal) elSubtotal.textContent = formatRupiah(subtotal);
+  if (elDiskon) elDiskon.textContent = "- " + formatRupiah(diskon);
+  if (elTotal) elTotal.textContent = formatRupiah(totalAkhir);
 
   hitungKembalian();
 }
 
-// Menghitung uang kembalian
 function hitungKembalian() {
   let subtotal = 0;
-
   for (let i = 0; i < keranjang.length; i++) {
     subtotal += keranjang[i].harga * keranjang[i].qty;
   }
 
   let totalAkhir = subtotal - diskon;
-  let uangBayar = Number(document.getElementById("uangBayar").value);
+  let uangInput = document.getElementById("uangBayar");
+  let uangBayar = uangInput ? Number(uangInput.value) : 0;
 
-  let hasilKembalian = document.getElementById("hasilKembalian");
-  let pesanBayar = document.getElementById("pesanBayar");
+  let elKembalian = document.getElementById("strukKembalian");
+  let elPesan = document.getElementById("pesanBayar");
 
-  pesanBayar.textContent = "";
+  if (elPesan) elPesan.textContent = "";
 
   if (!uangBayar || uangBayar <= 0) {
-    hasilKembalian.textContent = "Rp 0";
+    if (elKembalian) elKembalian.textContent = "Rp 0";
     return;
   }
 
   if (uangBayar < totalAkhir) {
     let kurang = totalAkhir - uangBayar;
-
-    hasilKembalian.textContent = "Rp 0";
-    pesanBayar.textContent =
-      "Uang belum mencukupi. Kurang " + formatRupiah(kurang);
+    if (elKembalian) elKembalian.textContent = "Rp 0";
+    if (elPesan) elPesan.textContent = "Uang kurang " + formatRupiah(kurang);
   } else {
     let kembalian = uangBayar - totalAkhir;
-    hasilKembalian.textContent = formatRupiah(kembalian);
+    if (elKembalian) elKembalian.textContent = formatRupiah(kembalian);
   }
 }
 
-// Tombol pilihan hemat
-function isiCepat(nama, harga) {
-  document.getElementById("namaBarang").value = nama;
-  document.getElementById("hargaBarang").value = harga;
-  document.getElementById("qtyBarang").value = 1;
+function pilihCepat(nama, harga) {
+  let namaInput = document.getElementById("namaBarang");
+  let hargaInput = document.getElementById("hargaBarang");
+  let qtyInput = document.getElementById("jumlahBarang");
+
+  if (namaInput) namaInput.value = nama;
+  if (hargaInput) hargaInput.value = harga;
+  if (qtyInput) qtyInput.value = 1;
 }
 
-// Mengosongkan transaksi
 function transaksiBaru() {
   let yakin = confirm("Apakah kamu yakin ingin mengosongkan transaksi?");
-
   if (yakin) {
     keranjang = [];
     diskon = 0;
-
     localStorage.removeItem("keranjang");
 
-    document.getElementById("formBarang").reset();
-    document.getElementById("kodePromo").value = "";
-    document.getElementById("uangBayar").value = "";
+    let form = document.getElementById("formBarang");
+    let voucher = document.getElementById("kodeVoucher");
+    let bayar = document.getElementById("uangBayar");
 
-    document.getElementById("errorNama").textContent = "";
-    document.getElementById("errorHarga").textContent = "";
-    document.getElementById("errorQty").textContent = "";
+    if (form) form.reset();
+    if (voucher) voucher.value = "";
+    if (bayar) bayar.value = "";
 
     tampilkanKeranjang();
   }
 }
 
-// Saat  disubmit
-document
-  .getElementById("formBarang")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    tambahBarang();
-  });
-
-// uang bayar diketik
-document.getElementById("uangBayar").addEventListener("input", function () {
-  hitungKembalian();
-});
-
-// tombol promo
-document.getElementById("btnPromo").addEventListener("click", function () {
-  let kode = document.getElementById("kodePromo").value.trim().toUpperCase();
-
-  if (kode === "ITERA123") {
-    hitungTotal();
-
-    if (keranjang.length > 0) {
-      alert("Kode promo ITERA123 berhasil digunakan.");
-    }
-  } else if (kode !== "") {
-    alert("Kode promo tidak ditemukan.");
-    hitungTotal();
-  } else {
-    hitungTotal();
+document.addEventListener("DOMContentLoaded", function () {
+  let formBarang = document.getElementById("formBarang");
+  if (formBarang) {
+    formBarang.addEventListener("submit", function (e) {
+      e.preventDefault();
+      tambahBarang();
+    });
   }
-});
 
-//  kode promo berubah, total juga dihitung ulang
-document.getElementById("kodePromo").addEventListener("input", function () {
-  hitungTotal();
-});
+  let uangBayar = document.getElementById("uangBayar");
+  if (uangBayar) {
+    uangBayar.addEventListener("input", hitungKembalian);
+  }
 
-// Tombol transaksi baru
-document.getElementById("btnReset").addEventListener("click", function () {
-  transaksiBaru();
-});
+  let btnVoucher = document.getElementById("btnVoucher");
+  if (btnVoucher) {
+    btnVoucher.addEventListener("click", function () {
+      let kodeEl = document.getElementById("kodeVoucher");
+      let kode = kodeEl ? kodeEl.value.trim().toUpperCase() : "";
 
-// saat halaman pertama kali dibuka
-tampilkanTanggal();
-tampilkanKeranjang();
+      if (kode === "ITERA123") {
+        hitungTotal();
+        if (keranjang.length > 0) alert("Kode promo ITERA123 berhasil digunakan!");
+      } else if (kode !== "") {
+        alert("Kode promo tidak valid.");
+        hitungTotal();
+      } else {
+        hitungTotal();
+      }
+    });
+  }
+
+  let kodeVoucher = document.getElementById("kodeVoucher");
+  if (kodeVoucher) {
+    kodeVoucher.addEventListener("input", hitungTotal);
+  }
+
+  let btnReset = document.getElementById("btnReset");
+  if (btnReset) {
+    btnReset.addEventListener("click", transaksiBaru);
+  }
+
+  tampilkanTanggal();
+  tampilkanKeranjang();
+});
