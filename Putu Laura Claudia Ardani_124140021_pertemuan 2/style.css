@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff9fb; color: #352a30; font-family: Arial, sans-serif; font-size: 14px; }
+header { padding: 25px 20px 20px; text-align: center; background: #f8dce7; border-bottom: 1px solid #edc5d4; }
+header h1 { margin: 0 0 7px; font-size: 26px; font-weight: 700; }
+header p { margin: 0; color: #745561; }
+main { width: min(650px, calc(100% - 30px)); margin: 25px auto; }
+section { margin-bottom: 18px; padding: 18px; background: white; border: 1px solid #efdce4; border-radius: 6px; }
+h2 { margin: 0 0 15px; font-size: 18px; }
+label { display: block; margin: 0 0 6px; font-weight: 600; }
+input, select { width: 100%; min-height: 37px; padding: 8px 10px; margin-bottom: 13px; border: 1px solid #decbd3; border-radius: 4px; background: #fff; color: #352a30; font: inherit; }
+input:focus, select:focus { outline: 1px solid #d77f9e; border-color: #d77f9e; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+button { border: 0; border-radius: 4px; background: #d77f9e; color: white; padding: 10px 14px; font: inherit; cursor: pointer; }
+button:hover { background: #bd6485; }
+button.secondary { margin-left: 5px; background: #f4e8ed; color: #503b44; }
+.hidden { display: none; }
+.list-title { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.list-title h2 { margin-bottom: 10px; }
+.list-title select { width: 145px; margin-bottom: 10px; }
+#total { color: #856c77; font-size: 12px; margin: 0 0 12px; }
+.schedule-item { padding: 12px 0; border-top: 1px solid #f0e3e8; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.schedule-item h3 { font-size: 14px; margin: 0 0 5px; }
+.schedule-item p { margin: 0; color: #806d76; font-size: 12px; line-height: 1.5; }
+.actions { display: flex; gap: 5px; flex-shrink: 0; }
+.actions button { padding: 7px 9px; font-size: 12px; }
+.actions .delete { background: #f4e8ed; color: #754657; }
+.empty { padding: 15px 0; color: #806d76; }
+.quote-section { background: #fff0f5; }
+.quote-section p { margin: 0 0 8px; }
+.text-button { padding: 0; background: transparent; color: #a64d70; text-decoration: underline; }
+.text-button:hover { background: transparent; color: #7c3150; }
+footer { padding: 5px 15px 22px; text-align: center; color: #967e88; font-size: 12px; }
+@media (max-width: 480px) { .row { gap: 8px; } section { padding: 14px; } .schedule-item { align-items: flex-start; } .actions { flex-direction: column; } }
+
+.latihan-section ul{padding-left:22px}.latihan-section li{margin:7px 0}.latihan-section a{color:#a33c68}.latihan-section a:hover{text-decoration:none}

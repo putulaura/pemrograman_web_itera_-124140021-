@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jadwal Kuliah</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Jadwal Kuliah</h1>
+      <p>Pengigat kita biar nggak lupa kelas.</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>Tambah jadwal</h2>
+        <form id="scheduleForm">
+          <input type="hidden" id="editId" />
+          <label for="course">Mata kuliah</label>
+          <input
+            id="course"
+            type="text"
+            placeholder="Contoh: Pengembangan Aplikasi Web"
+            required
+          />
+
+          <div class="row">
+            <div>
+              <label for="day">Hari</label>
+              <select id="day">
+                <option>Senin</option>
+                <option>Selasa</option>
+                <option>Rabu</option>
+                <option>Kamis</option>
+                <option>Jumat</option>
+                <option>Sabtu</option>
+              </select>
+            </div>
+            <div>
+              <label for="time">Jam</label>
+              <input id="time" type="time" value="09:00" required />
+            </div>
+          </div>
+
+          <label for="place">Ruang (opsional)</label>
+          <input id="place" type="text" placeholder="Contoh: GKU 2" />
+          <button id="saveBtn" type="submit">Simpan jadwal</button>
+          <button id="cancelEdit" class="secondary hidden" type="button">
+            Batal
+          </button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <div class="list-title">
+          <h2>Jadwalku</h2>
+          <select id="filterDay" aria-label="Pilih hari">
+            <option value="Semua">Semua hari</option>
+            <option>Senin</option>
+            <option>Selasa</option>
+            <option>Rabu</option>
+            <option>Kamis</option>
+            <option>Jumat</option>
+            <option>Sabtu</option>
+          </select>
+        </div>
+        <p id="total">Belum ada jadwal.</p>
+        <div id="scheduleList"></div>
+      </section>
+
+      <section class="quote-section">
+        <p id="quoteText">Semangat kuliahnya, KITA PASTI BISAA!</p>
+        <button id="quoteBtn" class="text-button" type="button">
+          Ganti kalimat
+        </button>
+      </section>
+    </main>
+    <section class="list-section latihan-section">
+      <h2>Latihan Pertemuan 2</h2>
+      <p>LATIHAN.</p>
+      <ul>
+        <li><a href="modul/01-let-const/index.html">Let dan Const</a></li>
+        <li><a href="modul/02-conditional/index.html">Conditional</a></li>
+        <li><a href="modul/03-arrow-function/index.html">Arrow Function</a></li>
+        <li>
+          <a href="modul/04-template-literals/index.html">Template Literals</a>
+        </li>
+        <li><a href="modul/05-destructuring/index.html">Destructuring</a></li>
+        <li><a href="modul/06-spread-rest/index.html">Spread dan Rest</a></li>
+        <li><a href="modul/07-object-class/index.html">Object dan Class</a></li>
+        <li><a href="modul/08-array-methods/index.html">Array Methods</a></li>
+        <li><a href="modul/09-async-await/index.html">Async/Await</a></li>
+      </ul>
+    </section>
+    <footer>Jadwal Kuliah · Putu Laura</footer>
+  </body>
+</html>

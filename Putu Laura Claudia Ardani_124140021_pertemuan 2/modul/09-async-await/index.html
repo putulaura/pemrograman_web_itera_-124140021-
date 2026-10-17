@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async/Await dan Fetch API</title>
+    <link rel="stylesheet" href="../modul.css" />
+    <script src="latihan.js" defer></script>
+  </head>
+  <body>
+    <a class="back" href="../../index.html">← Kembali ke Jadwal Kuliah</a>
+    <h1>Async/Await dan Fetch API</h1>
+    <p>
+      Contoh fetch dari beberapa endpoint, retry, loading, penanganan error,
+      pagination sederhana, dan pencarian dengan debounce.
+    </p>
+    <div class="panel">
+      <p id="loading">Memulai...</p>
+      <h2>Hasil request</h2>
+      <pre id="hasil">Menunggu data...</pre>
+      <h2>Cari judul postingan</h2>
+      <input id="search" placeholder="Ketik kata, misalnya sunt..." />
+      <pre id="searchResults">Ketik kata untuk mencari judul postingan.</pre>
+    </div>
+  </body>
+</html>
