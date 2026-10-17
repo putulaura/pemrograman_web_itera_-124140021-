@@ -14,7 +14,7 @@ Website sederhana untuk mencatat jadwal kuliah dalam satu halaman. Saya memilih 
 
 Hasil web yang telah dikerjakan
 
-![Tampilan Jadwal Kuliah](screenshot-jadwal.png)
+![Tampilan Jadwal Kuliah](./screenshoot/jadwal.png)
 
 ## Fitur ES6+ yang Digunakan
 
