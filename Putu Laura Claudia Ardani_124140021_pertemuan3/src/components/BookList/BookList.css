@@ -1,0 +1,1 @@
+.book-card { transition: transform .15s; } .book-card:hover { transform: translateY(-2px); }
