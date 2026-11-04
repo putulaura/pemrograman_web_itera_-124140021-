@@ -11,7 +11,7 @@ Program ini digunakan untuk mengetahui nilai BMI dari berat dan tinggi badan. Pe
 
 **Screenshot hasil eksekusi:**
 
-![Hasil Soal 1](screenshots/soal1_bmi.png)
+![Hasil Soal 1](screenshoots/soal1_bmi.png)
 
 ## 2. Soal 2 – Mengolah Nilai Mahasiswa
 
@@ -20,7 +20,7 @@ File: `tugas2_nilai_mahasiswa.py`
 Program ini digunakan untuk menghitung nilai akhir mahasiswa berdasarkan nilai yang sudah dimasukkan. Selain itu, program juga menentukan grade setiap mahasiswa serta menampilkan nilai tertinggi dan terendah dari seluruh data.
 **Screenshot hasil eksekusi:**
 
-![Hasil Soal 2](screenshots/soal2_nilai.png)
+![Hasil Soal 2](screenshoots/soal2_nilai.png)
 
 ## 3. Soal 3 – Operasi Matematika
 
@@ -30,7 +30,7 @@ Pada soal ini, file math_operations.py berisi beberapa fungsi untuk menghitung l
 
 **Screenshot hasil eksekusi:**
 
-![Hasil Soal 3](screenshots/soal3_matematika.png)
+![Hasil Soal 3](screenshoots/soal3_matematika.png)
 
 ## 4. Cara Menjalankan Program
 
