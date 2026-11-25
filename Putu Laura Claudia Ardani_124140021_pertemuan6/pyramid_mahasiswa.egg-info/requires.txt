@@ -1,0 +1,10 @@
+pyramid
+pyramid_tm
+waitress
+SQLAlchemy
+zope.sqlalchemy
+alembic
+
+[testing]
+pytest
+webtest

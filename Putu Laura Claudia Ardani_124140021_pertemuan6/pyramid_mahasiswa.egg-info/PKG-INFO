@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pyramid_mahasiswa
+Version: 0.0
+Summary: Aplikasi REST API Mahasiswa dan Matakuliah
+Requires-Dist: pyramid
+Requires-Dist: pyramid_tm
+Requires-Dist: waitress
+Requires-Dist: SQLAlchemy
+Requires-Dist: zope.sqlalchemy
+Requires-Dist: alembic
+Provides-Extra: testing
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: webtest; extra == "testing"
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
